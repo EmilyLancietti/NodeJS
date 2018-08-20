@@ -23,7 +23,7 @@ const Leaders = require('./models/leaders');
 const Promotions = require('./models/promotions');
 const Users = require('./models/user');
 
-const url = 'mongodb://localhost:27017/conFusion';
+const url = 'mongodb://administrator:Qwerty1@ds125472.mlab.com:25472/confusiondb';
 const connect = mongoose.connect(url);
 
 connect.then(function (db) {
