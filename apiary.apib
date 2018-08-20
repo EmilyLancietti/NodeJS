@@ -1,0 +1,234 @@
+FORMAT: 1A
+HOST: https://agile-wave-88210.herokuapp.com/
+
+# test
+
+Test Apiary
+
+## List Dishes [/dishes]
+
+### List All Dishes [GET]
+
++ Response 200 (application/json)
+
+        [
+            {
+                    "label": "Hot",
+                    "featured": true,
+                    "_id": "5b79da1a6a27813f649b5a92",
+                    "name": "Uthappizza",
+                    "image": "images/uthappizza.png",
+                    "category": "mains",
+                    "price": 499,
+                    "description": "A unique combination of Indian Uthappam (pancake) and Italian pizza, topped with Cerignola olives, ripe vine cherry tomatoes, Vidalia onion, Guntur chillies and Buffalo Paneer.",
+                    "comments": [
+                        {
+                            "_id": "5b79da1a6a27813f649b5a96",
+                            "rating": 4,
+                            "comment": "Sends anyone to heaven, I wish I could get my mother-in-law to eat it!",
+                            "author": "Paul McVites",
+                            "createdAt": "2018-08-19T20:59:06.272Z",
+                            "updatedAt": "2018-08-19T20:59:06.272Z"
+                        },
+                        {
+                            "_id": "5b79da1a6a27813f649b5a95",
+                            "rating": 3,
+                            "comment": "Eat it, just eat it!",
+                            "author": "Michael Jaikishan",
+                            "createdAt": "2018-08-19T20:59:06.272Z",
+                            "updatedAt": "2018-08-19T20:59:06.272Z"
+                        },
+                        {
+                            "_id": "5b79da1a6a27813f649b5a94",
+                            "rating": 4,
+                            "comment": "Ultimate, Reaching for the stars!",
+                            "author": "Ringo Starry",
+                            "createdAt": "2018-08-19T20:59:06.272Z",
+                            "updatedAt": "2018-08-19T20:59:06.272Z"
+                        },
+                        {
+                            "_id": "5b79da1a6a27813f649b5a93",
+                            "rating": 2,
+                            "comment": "It's your birthday, we're gonna party!",
+                            "author": "25 Cent",
+                            "createdAt": "2018-08-19T20:59:06.272Z",
+                            "updatedAt": "2018-08-19T20:59:06.272Z"
+                        }
+                    ],
+                    "createdAt": "2018-08-19T20:59:06.273Z",
+                    "updatedAt": "2018-08-19T21:06:13.324Z",
+                    "__v": 3
+                }
+        ]
+    
+### Create a dish [POST]
+    
+    To create a dish a form is needed, with fields name, image, category, label, price, featured, description and comments.
+    Comments is an array of comments with fields rating, comment and author
+    
+    + Request (application/json)
+    
+        {
+            "label": "Hot",
+            "featured": true,
+            "name": "Uthappizza2",
+            "image": "images/uthappizza.png",
+            "category": "mains",
+            "price": 499,
+            "description": "A unique combination of Indian Uthappam (pancake) and Italian pizza, topped with Cerignola olives, ripe vine cherry tomatoes, Vidalia onion, Guntur chillies and Buffalo Paneer.",
+            "comments": [
+                {
+                    "_id": "5b79da1a6a27813f649b5a96",
+                    "rating": 4,
+                    "comment": "Sends anyone to heaven, I wish I could get my mother-in-law to eat it!",
+                    "author": "Paul McVites"
+                },
+                {
+                    "rating": 3,
+                    "comment": "Eat it, just eat it!",
+                    "author": "Michael Jaikishan"
+                }
+       ]
+}  
+
++ Response 200 (application/json)
+
+            {
+            "label": "Hot",
+            "featured": true,
+            "_id": "5b7a8b3347d8ac35e4f0eaff",
+            "name": "Uthappizza2",
+            "image": "images/uthappizza.png",
+            "category": "mains",
+            "price": 499,
+            "description": "A unique combination of Indian Uthappam (pancake) and Italian pizza, topped with Cerignola olives, ripe vine cherry tomatoes, Vidalia onion, Guntur chillies and Buffalo Paneer.",
+            "comments": [
+                {
+                    "_id": "5b79da1a6a27813f649b5a96",
+                    "rating": 4,
+                    "comment": "Sends anyone to heaven, I wish I could get my mother-in-law to eat it!",
+                    "author": "Paul McVites",
+                    "createdAt": "2018-08-20T09:34:43.472Z",
+                    "updatedAt": "2018-08-20T09:34:43.472Z"
+                },
+                {
+                    "_id": "5b7a8b3347d8ac35e4f0eb00",
+                    "rating": 3,
+                    "comment": "Eat it, just eat it!",
+                    "author": "Michael Jaikishan",
+                    "createdAt": "2018-08-20T09:34:43.472Z",
+                    "updatedAt": "2018-08-20T09:34:43.472Z"
+                }
+            ],
+            "createdAt": "2018-08-20T09:34:43.472Z",
+            "updatedAt": "2018-08-20T09:34:43.472Z",
+            "__v": 0
+        }
+
+
+### Delete all the dishes [DELETE]
+
++ Response 200 (application/json)
+
+        {
+            "n": 2,
+            "ok": 1
+        }
+
+## Get a dish [/dishes/{dishId}]
+
+### Find dish by Id [GET]
+
++ Parameters
+
+    + dishId - The id of the dish
+    
++ Response 200 (application/json)
+
+        {
+            "label": "Hot",
+            "featured": true,
+            "_id": "5b7a8b3347d8ac35e4f0eaff",
+            "name": "Uthappizza2",
+            "image": "images/uthappizza.png",
+            "category": "mains",
+            "price": 499,
+            "description": "A unique combination of Indian Uthappam (pancake) and Italian pizza, topped with Cerignola olives, ripe vine cherry tomatoes, Vidalia onion, Guntur chillies and Buffalo Paneer.",
+            "comments": [
+                {
+                    "_id": "5b79da1a6a27813f649b5a96",
+                    "rating": 4,
+                    "comment": "Sends anyone to heaven, I wish I could get my mother-in-law to eat it!",
+                    "author": "Paul McVites",
+                    "createdAt": "2018-08-20T09:34:43.472Z",
+                    "updatedAt": "2018-08-20T09:34:43.472Z"
+                },
+                {
+                    "_id": "5b7a8b3347d8ac35e4f0eb00",
+                    "rating": 3,
+                    "comment": "Eat it, just eat it!",
+                    "author": "Michael Jaikishan",
+                    "createdAt": "2018-08-20T09:34:43.472Z",
+                    "updatedAt": "2018-08-20T09:34:43.472Z"
+                }
+            ],
+            "createdAt": "2018-08-20T09:34:43.472Z",
+            "updatedAt": "2018-08-20T09:34:43.472Z",
+            "__v": 0
+        }
+
+
+### Update dish with id [PUT]
+
++ Parameters
+     
+     + dishId - dish Id
+     
++ Request (application/json)
+
+            {
+                "label": "Hot",
+                "featured": true,
+                "_id": "5b79da1a6a27813f649b5a92",
+                "name": "Uthappizza2",
+                "image": "images/uthappizza.png",
+                "category": "mains",
+                "price": 499,
+                "description": "A unique combination of Indian Uthappam (pancake) and Italian pizza, topped with Cerignola olives, ripe vine cherry tomatoes, Vidalia onion, Guntur chillies and Buffalo Paneer.",
+                "comments": [
+                    {
+                        "_id": "5b79da1a6a27813f649b5a96",
+                        "rating": 4,
+                        "comment": "Sends anyone to heaven, I wish I could get my mother-in-law to eat it!",
+                        "author": "Paul McVites",
+                        "createdAt": "2018-08-19T20:59:06.272Z",
+                        "updatedAt": "2018-08-19T20:59:06.272Z"
+                    }
+                ]
+        }
+        
++ Response 200 (application/json)
+        
+        {
+            "label": "Hot",
+            "featured": true,
+            "_id": "5b79da1a6a27813f649b5a92",
+            "name": "Uthappizza2",
+            "image": "images/uthappizza.png",
+            "category": "mains",
+            "price": 499,
+            "description": "A unique combination of Indian Uthappam (pancake) and Italian pizza, topped with Cerignola olives, ripe vine cherry tomatoes, Vidalia onion, Guntur chillies and Buffalo Paneer.",
+            "comments": [
+                {
+                    "_id": "5b79da1a6a27813f649b5a96",
+                    "rating": 4,
+                    "comment": "Sends anyone to heaven, I wish I could get my mother-in-law to eat it!",
+                    "author": "Paul McVites",
+                    "createdAt": "2018-08-20T09:46:44.582Z",
+                    "updatedAt": "2018-08-20T09:46:44.582Z"
+                }
+            ],
+            "createdAt": "2018-08-19T20:59:06.273Z",
+            "updatedAt": "2018-08-20T09:46:44.582Z",
+            "__v": 3
+        }
