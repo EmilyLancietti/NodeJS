@@ -130,12 +130,12 @@ dishRouter.route('/:dishId/comments')
                     dish.comments.push(req.body);
                     dish.save()
                         .then(function (dish) {
-                        res.statusCode = 200;
-                        res.setHeader('Content-Type', 'application/json');
-                        res.json(dish);
-                    }, function (err) {
-                        next(err);
-                    })
+                            res.statusCode = 200;
+                            res.setHeader('Content-Type', 'application/json');
+                            res.json(dish);
+                        }, function (err) {
+                            next(err);
+                        })
                 } else {
                     err = new Error('Dish ' + req.params.dishId + ' not found');
                     err.status = 404;
@@ -221,12 +221,12 @@ dishRouter.route('/:dishId/comments/:commentId')
                     }
                     dish.save()
                         .then(function (dish) {
-                        res.statusCode = 200;
-                        res.setHeader('Content-Type', 'application/json');
-                        res.json(dish);
-                    }, function (err) {
-                        next(err);
-                    })
+                            res.statusCode = 200;
+                            res.setHeader('Content-Type', 'application/json');
+                            res.json(dish);
+                        }, function (err) {
+                            next(err);
+                        })
                         .catch(function (err) {
                             next(err);
                         })
@@ -254,12 +254,12 @@ dishRouter.route('/:dishId/comments/:commentId')
                     dish.comments.id(req.params.commentId).remove();
                     dish.save()
                         .then(function (dish) {
-                        res.statusCode = 200;
-                        res.setHeader('Content-Type', 'application/json');
-                        res.json(dish);
-                    }, function (err) {
-                        next(err);
-                    })
+                            res.statusCode = 200;
+                            res.setHeader('Content-Type', 'application/json');
+                            res.json(dish);
+                        }, function (err) {
+                            next(err);
+                        })
                         .catch(function (err) {
                             next(err);
                         })
@@ -281,24 +281,3 @@ dishRouter.route('/:dishId/comments/:commentId')
     });
 
 module.exports = dishRouter;
-/*
-app.get('/dishes/:dishId', function (req, res, next) {
-    res.end('Will send details of the dish: ' + req.params.dishId + ' to you!');
-});
-
-app.post('/dishes/:dishId', function (req, res, next) {
-    res.statusCode = 403;
-    res.end('POST operation not supported on /dishes/' + req.params.dishId);
-});
-
-app.put('/dishes/:dishId', function (req, res, next) {
-    res.statusCode = 403;
-    res.write('Updating the dish ' + req.params.dishId + '\n');
-    res.end('Will update the dish: ' + req.body.name +
-        ' with details: ' + req.body.description);
-});
-
-app.delete('/dishes/:dishId', function (req, res, next) {
-    res.end('Deleting dish: ' + req.params.dishId);
-});
-*/
